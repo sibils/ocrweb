@@ -1,0 +1,2 @@
+#!/bin/sh -e
+docker run -it --rm --name tesseract_server -p 8888:8888 sibils/tesseract_server
