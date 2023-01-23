@@ -23,10 +23,14 @@ The home page of the service is then available on http://localhost:8888/
 
 You can then start, stop or look at the service status with
 ```shell
-systemctl start ocrweb.service
-systemctl status ocrweb.service
-systemctl stop ocrweb.service
+systemctl <action> ocrweb.service
+# where <action> is either start, restart, stop or status
 ```
 
 To config a caddy service that will make the ocrweb service available to the external world via http and https on default ports, do the following
 
+```shell
+cp ./system/CaddyFile /etc/caddy
+systemctl start caddy
+# use command with start, restart, stop or status according to your needs
+```
