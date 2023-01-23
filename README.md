@@ -20,6 +20,7 @@ systemctl enable $(pwd)/ocrweb.service
 systemctl start ocrweb.service
 ```
 The home page of the service is then available on http://localhost:8888/
+
 You can then start, stop or look at the service status with
 ```shell
 systemctl start ocrweb.service
