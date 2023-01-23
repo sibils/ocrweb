@@ -34,3 +34,11 @@ cp ./system/CaddyFile /etc/caddy
 systemctl start caddy
 # use command with start, restart, stop or status according to your needs
 ```
+
+See also
+```shell
+systemctl enable <servicename.service>
+systemctl daemon-reload
+shell
+
+## Service usage
