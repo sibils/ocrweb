@@ -45,8 +45,7 @@ COPY --from=build /usr/local/share/tessdata /usr/local/share/tessdata/
 
 # efface le tesseract installé par le paquet debian "tesseract-ocr" 
 RUN    rm /usr/bin/tesseract \
-    && rm /usr/lib/x86_64-linux-gnu/libtesseract.so.5 \
-    && rm /usr/lib/x86_64-linux-gnu/libtesseract.so.5.0.1 \
+    && rm /usr/lib/x86_64-linux-gnu/libtesseract.* \
     && mv /usr/share/tesseract-ocr/5/tessdata/*.traineddata /usr/local/share/tessdata/
 
 # 

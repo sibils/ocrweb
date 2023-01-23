@@ -22,7 +22,7 @@ app = FastAPI(
 )
 
 
-THREAD_COUNT = 5
+THREAD_COUNT = 4
 THREADPOOL = concurrent.futures.ThreadPoolExecutor(max_workers=THREAD_COUNT)
 PATTERN_FILE = abspath(dirname(__file__)) + '/eng.pam_patterns'
 

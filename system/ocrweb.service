@@ -1,0 +1,8 @@
+[Unit]
+Description=OcrWeb
+
+[Service]
+ExecStart=/home/PierreAndreMichel/ocrweb/scripts/docker.daemon
+
+[Install]
+WantedBy=multi-user.target
