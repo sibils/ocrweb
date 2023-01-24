@@ -39,7 +39,7 @@ See also
 ```shell
 systemctl enable <servicename.service>
 systemctl daemon-reload
-shell
+```
 
 ## Service usage
 The service can be tested with tools provided in client directory.
