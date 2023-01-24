@@ -42,3 +42,11 @@ systemctl daemon-reload
 shell
 
 ## Service usage
+The service can be tested with tools provided in client directory.
+*client.py* calls the OCR service with N threads and computes the average time for the processing of one image.
+The test images are in ./client/images directory. 
+The output of the OCR processes is stored in the ./client/output directory (not under git).
+```shell
+cd client
+python client.py
+```
