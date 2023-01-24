@@ -2,14 +2,19 @@ from concurrent.futures import ThreadPoolExecutor
 from time import time
 import pathlib
 import requests
+import sys
 
+if len(sys.argv)<2:
+    print("Usage: client.py <max_threads>\nExited")
+    sys.exit(1)
+
+max_threads=int(sys.argv[1])
+print("Calling service with max_thread:", max_threads)
 
 SESSION = requests.Session()
 
 #OCR_SERVICE="http://localhost:8888/ocr/?max_time=7"
 OCR_SERVICE="https://ocrweb.text-analytics.ch/ocr/?max_time=7"
-
-#MAX_WORKERS=8
 
 def get_content(filename):
     with open(filename, 'rb') as f:
@@ -45,7 +50,7 @@ def main():
     l = [get_content(f) for f in l]
     count = 0
 
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=max_threads) as pool:
         time_before = time()
         for _ in range(0, 1):
             for content in l:
