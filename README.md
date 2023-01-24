@@ -41,7 +41,7 @@ systemctl enable <servicename.service>
 systemctl daemon-reload
 ```
 
-## Service usage
+## Test the service
 The service can be tested with tools provided in client directory.
 *client.py* calls the OCR service with N threads and computes the average time for the processing of one image.
 The test images are in ./client/images directory. 
