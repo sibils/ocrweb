@@ -51,7 +51,7 @@ RUN    rm /usr/bin/tesseract \
 # 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN pip install --break-system-packages -r requirements.txt
 
 # 
 ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
