@@ -106,7 +106,7 @@ def sync_ocr(image_buffer: bytes, timeout: float = 7) -> OcrResponse:
 
 
 @app.post("/ocr/", description="OCR image using Tesseract")
-async def ocr(image_buffer: bytes = Body(), max_time: float = 7.0):
+async def ocr(image_buffer: bytes = Body(media_type="image/*"), max_time: float = 7.0):
     time_start = perf_counter()
     loop = asyncio.get_running_loop()
     result = await loop.run_in_executor(THREADPOOL, sync_ocr, image_buffer, max_time)
